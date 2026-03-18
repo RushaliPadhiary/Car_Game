@@ -1,0 +1,381 @@
+[gd_scene format=3 uid="uid://dfq2iqhuccltx"]
+
+[ext_resource type="Script" uid="uid://4vxvmd16aeo1" path="res://Scenes/game.gd" id="1_3dryh"]
+[ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://graphics/map.png" id="1_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://dghd7rii024ea" path="res://Scenes/player.tscn" id="2_3dryh"]
+[ext_resource type="Texture2D" uid="uid://dxciltwc3sgll" path="res://graphics/objects/house2.png" id="3_mg4q0"]
+[ext_resource type="PackedScene" uid="uid://c2m5e0n0bvmw8" path="res://Scenes/object.tscn" id="3_wrm1d"]
+[ext_resource type="Texture2D" uid="uid://73gfa8tjrcik" path="res://graphics/objects/house3.png" id="4_vm72l"]
+[ext_resource type="PackedScene" uid="uid://v7h06usw1dvp" path="res://Scenes/box.tscn" id="5_wowpa"]
+[ext_resource type="Texture2D" uid="uid://cxutqp0hti8vw" path="res://graphics/objects/bench.png" id="6_nb51f"]
+[ext_resource type="Texture2D" uid="uid://c5iy3tuxd0vaw" path="res://graphics/objects/barrier.png" id="7_nnt18"]
+[ext_resource type="Texture2D" uid="uid://beho7qo80tneo" path="res://graphics/objects/bin.png" id="8_ewbju"]
+[ext_resource type="Texture2D" uid="uid://y78osdw0bolc" path="res://graphics/objects/box1.png" id="9_85qyi"]
+[ext_resource type="Texture2D" uid="uid://cv8cli0ov53f1" path="res://graphics/objects/box2.png" id="10_iivbl"]
+[ext_resource type="Texture2D" uid="uid://cuqeolw7yvunc" path="res://graphics/objects/box3.png" id="11_7nbq1"]
+[ext_resource type="Texture2D" uid="uid://b8fq8sgkmu4dx" path="res://graphics/objects/green car.png" id="12_exi56"]
+[ext_resource type="Texture2D" uid="uid://b778fphjcav0" path="res://graphics/objects/light.png" id="13_7t8sx"]
+[ext_resource type="Texture2D" uid="uid://cgvtilagem3np" path="res://graphics/objects/red car.png" id="14_mg4q0"]
+[ext_resource type="Texture2D" uid="uid://boj6kq1t4mduj" path="res://graphics/objects/tree potted.png" id="15_vm72l"]
+[ext_resource type="Texture2D" uid="uid://y3ndpd5bhsi3" path="res://graphics/objects/tree2.png" id="18_22asu"]
+[ext_resource type="Texture2D" uid="uid://cfe22lwgaf1k2" path="res://graphics/objects/traffic.png" id="19_fkdbe"]
+[ext_resource type="Texture2D" uid="uid://58kopy31xbf8" path="res://graphics/objects/taxi.png" id="20_81klo"]
+[ext_resource type="Texture2D" uid="uid://oqgtp468wc6x" path="res://graphics/objects/sign.png" id="21_tgy6u"]
+[ext_resource type="Texture2D" uid="uid://b3jchn0artiyt" path="res://graphics/objects/line.png" id="22_cwurv"]
+[ext_resource type="Texture2D" uid="uid://d1h0ksxlju0ou" path="res://graphics/objects/house1.png" id="23_mucmn"]
+[ext_resource type="FontFile" uid="uid://hqpa84d2dqvp" path="res://fonts/Better VCR 9.0.1.ttf" id="24_vm72l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrm1d"]
+size = Vector2(20, 639)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dryh"]
+size = Vector2(424, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wowpa"]
+size = Vector2(383, 168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22asu"]
+size = Vector2(8, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkdbe"]
+size = Vector2(32, 19)
+
+[node name="Game" type="Node2D" unique_id=614967015]
+script = ExtResource("1_3dryh")
+metadata/_edit_vertical_guides_ = [-526.0]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=127490548]
+texture = ExtResource("1_wrm1d")
+metadata/_edit_lock_ = true
+
+[node name="Borders" type="Node2D" parent="." unique_id=779338789]
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders" unique_id=1023000850]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=2008238018]
+position = Vector2(-202, 0)
+shape = SubResource("RectangleShape2D_wrm1d")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Borders" unique_id=1837952702]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D2" unique_id=1006722819]
+position = Vector2(203, -1)
+shape = SubResource("RectangleShape2D_wrm1d")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Borders" unique_id=2052523450]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D3" unique_id=699294536]
+position = Vector2(-1, -329.5)
+shape = SubResource("RectangleShape2D_3dryh")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Borders" unique_id=755316153]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D4" unique_id=481858999]
+position = Vector2(-1, 328)
+shape = SubResource("RectangleShape2D_3dryh")
+
+[node name="Area2D" type="Area2D" parent="Borders" unique_id=680538889]
+position = Vector2(0, -1)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Area2D" unique_id=1839018888]
+position = Vector2(-1.5, -235)
+shape = SubResource("RectangleShape2D_wowpa")
+
+[node name="House2" type="Sprite2D" parent="Borders/Area2D" unique_id=1112830878]
+position = Vector2(-146, -294)
+texture = ExtResource("3_mg4q0")
+
+[node name="House3" type="Sprite2D" parent="Borders/Area2D" unique_id=796667739]
+position = Vector2(88, 286)
+texture = ExtResource("4_vm72l")
+
+[node name="Timer" type="Node" parent="." unique_id=57848726]
+
+[node name="CarTimer" type="Timer" parent="Timer" unique_id=1814865258]
+wait_time = 0.5
+autostart = true
+
+[node name="ScoreTimer" type="Timer" parent="Timer" unique_id=1670581105]
+autostart = true
+
+[node name="Objects" type="Node2D" parent="." unique_id=1292288621]
+y_sort_enabled = true
+
+[node name="Player" parent="Objects" unique_id=2122906745 instance=ExtResource("2_3dryh")]
+position = Vector2(35, -38)
+
+[node name="Tree" parent="Objects" unique_id=1055916996 instance=ExtResource("3_wrm1d")]
+position = Vector2(-63, 221)
+
+[node name="Tree2" parent="Objects" unique_id=821821924 instance=ExtResource("3_wrm1d")]
+position = Vector2(-98, 222)
+
+[node name="Tree3" parent="Objects" unique_id=1361695928 instance=ExtResource("3_wrm1d")]
+position = Vector2(-86, 189)
+
+[node name="Tree5" parent="Objects" unique_id=340266299 instance=ExtResource("3_wrm1d")]
+position = Vector2(-39, 190)
+
+[node name="Tree6" parent="Objects" unique_id=601318319 instance=ExtResource("3_wrm1d")]
+position = Vector2(5, 188)
+
+[node name="Tree7" parent="Objects" unique_id=724135153 instance=ExtResource("3_wrm1d")]
+position = Vector2(46, 188)
+
+[node name="Tree8" parent="Objects" unique_id=1682967725 instance=ExtResource("3_wrm1d")]
+position = Vector2(87, 188)
+
+[node name="Tree9" parent="Objects" unique_id=529434040 instance=ExtResource("3_wrm1d")]
+position = Vector2(-18, 221)
+
+[node name="Tree10" parent="Objects" unique_id=1892904145 instance=ExtResource("3_wrm1d")]
+position = Vector2(-28, 265)
+
+[node name="Tree14" parent="Objects" unique_id=249344689 instance=ExtResource("3_wrm1d")]
+position = Vector2(-137, -236)
+
+[node name="Tree16" parent="Objects" unique_id=1528844229 instance=ExtResource("3_wrm1d")]
+position = Vector2(-75, -267)
+
+[node name="Tree18" parent="Objects" unique_id=283469602 instance=ExtResource("3_wrm1d")]
+position = Vector2(51, -267)
+
+[node name="Tree19" parent="Objects" unique_id=580605181 instance=ExtResource("3_wrm1d")]
+position = Vector2(107, -234)
+
+[node name="Tree17" parent="Objects" unique_id=1402143793 instance=ExtResource("3_wrm1d")]
+position = Vector2(-10, -267)
+
+[node name="Tree15" parent="Objects" unique_id=1383084081 instance=ExtResource("3_wrm1d")]
+position = Vector2(-205, -236)
+
+[node name="Tree11" parent="Objects" unique_id=1234201663 instance=ExtResource("3_wrm1d")]
+position = Vector2(122, 189)
+
+[node name="Tree12" parent="Objects" unique_id=788806067 instance=ExtResource("3_wrm1d")]
+position = Vector2(21, 225)
+
+[node name="Tree13" parent="Objects" unique_id=716631655 instance=ExtResource("3_wrm1d")]
+position = Vector2(68, 215)
+
+[node name="Tree4" parent="Objects" unique_id=972601690 instance=ExtResource("3_wrm1d")]
+position = Vector2(-80, 259)
+
+[node name="Box" parent="Objects" unique_id=1148220271 instance=ExtResource("5_wowpa")]
+position = Vector2(-21, 273)
+
+[node name="Bench" type="StaticBody2D" parent="Objects" unique_id=1883660459]
+position = Vector2(73, 60)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects/Bench" unique_id=241483589]
+texture = ExtResource("6_nb51f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bench" unique_id=935803617]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_22asu")
+
+[node name="Bench2" type="StaticBody2D" parent="Objects" unique_id=1474823609]
+position = Vector2(72, 29)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects/Bench2" unique_id=561897583]
+texture = ExtResource("6_nb51f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bench2" unique_id=467092575]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_22asu")
+
+[node name="Stuff" type="Node2D" parent="Objects" unique_id=765831561]
+
+[node name="Barrier" type="Sprite2D" parent="Objects/Stuff" unique_id=1678723696]
+position = Vector2(-81, 40)
+texture = ExtResource("7_nnt18")
+
+[node name="Bin" type="Sprite2D" parent="Objects/Stuff" unique_id=1863747662]
+position = Vector2(-51, 68)
+texture = ExtResource("8_ewbju")
+
+[node name="Box1" type="Sprite2D" parent="Objects/Stuff" unique_id=744737301]
+position = Vector2(-156, 41)
+texture = ExtResource("9_85qyi")
+
+[node name="Box2" type="Sprite2D" parent="Objects/Stuff" unique_id=916552765]
+position = Vector2(-146, 31)
+texture = ExtResource("10_iivbl")
+
+[node name="Box3" type="Sprite2D" parent="Objects/Stuff" unique_id=1638115513]
+position = Vector2(-141, 42)
+texture = ExtResource("11_7nbq1")
+
+[node name="GreenCar" type="Sprite2D" parent="Objects/Stuff" unique_id=1187760988]
+position = Vector2(-73, 58)
+texture = ExtResource("12_exi56")
+
+[node name="Light" type="Sprite2D" parent="Objects/Stuff" unique_id=1574146688]
+position = Vector2(-11, 59)
+texture = ExtResource("13_7t8sx")
+
+[node name="RedCar" type="Sprite2D" parent="Objects/Stuff" unique_id=519164183]
+position = Vector2(-90, 58)
+texture = ExtResource("14_mg4q0")
+
+[node name="TreePotted" type="Sprite2D" parent="Objects/Stuff" unique_id=669030294]
+position = Vector2(-33, 58)
+texture = ExtResource("15_vm72l")
+
+[node name="TreePotted2" type="Sprite2D" parent="Objects/Stuff" unique_id=1842618376]
+position = Vector2(-34, 13)
+texture = ExtResource("15_vm72l")
+
+[node name="TreePotted3" type="Sprite2D" parent="Objects/Stuff" unique_id=1736462967]
+position = Vector2(-170, 10)
+texture = ExtResource("15_vm72l")
+
+[node name="TreePotted5" type="Sprite2D" parent="Objects/Stuff" unique_id=1822422456]
+position = Vector2(-127, -87)
+texture = ExtResource("15_vm72l")
+
+[node name="TreePotted6" type="Sprite2D" parent="Objects/Stuff" unique_id=1375230739]
+position = Vector2(-32, -87)
+texture = ExtResource("15_vm72l")
+
+[node name="TreePotted4" type="Sprite2D" parent="Objects/Stuff" unique_id=1999188482]
+position = Vector2(-169, 59)
+texture = ExtResource("15_vm72l")
+
+[node name="Tree2" type="Sprite2D" parent="Objects/Stuff" unique_id=1689307101]
+position = Vector2(-166, 213)
+texture = ExtResource("18_22asu")
+
+[node name="Tree6" type="Sprite2D" parent="Objects/Stuff" unique_id=819615002]
+position = Vector2(-137, -216)
+texture = ExtResource("18_22asu")
+
+[node name="Tree7" type="Sprite2D" parent="Objects/Stuff" unique_id=176906727]
+position = Vector2(-75, -245)
+texture = ExtResource("18_22asu")
+
+[node name="Tree8" type="Sprite2D" parent="Objects/Stuff" unique_id=1265286251]
+position = Vector2(-9, -244)
+texture = ExtResource("18_22asu")
+
+[node name="Tree9" type="Sprite2D" parent="Objects/Stuff" unique_id=1028949339]
+position = Vector2(52, -244)
+texture = ExtResource("18_22asu")
+
+[node name="Tree10" type="Sprite2D" parent="Objects/Stuff" unique_id=1950708743]
+position = Vector2(175, -210)
+texture = ExtResource("18_22asu")
+
+[node name="Tree11" type="Sprite2D" parent="Objects/Stuff" unique_id=1013214324]
+position = Vector2(118, -223)
+texture = ExtResource("18_22asu")
+
+[node name="Tree3" type="Sprite2D" parent="Objects/Stuff" unique_id=199755111]
+position = Vector2(-181, 247)
+texture = ExtResource("18_22asu")
+
+[node name="Tree4" type="Sprite2D" parent="Objects/Stuff" unique_id=672591541]
+position = Vector2(-150, 247)
+texture = ExtResource("18_22asu")
+
+[node name="Tree5" type="Sprite2D" parent="Objects/Stuff" unique_id=1723172887]
+position = Vector2(-164, 288)
+texture = ExtResource("18_22asu")
+
+[node name="Traffic" type="Sprite2D" parent="Objects/Stuff" unique_id=2080206662]
+position = Vector2(90.99999, -157)
+scale = Vector2(1.3, 1.7142857)
+texture = ExtResource("19_fkdbe")
+
+[node name="Taxi" type="Sprite2D" parent="Objects/Stuff" unique_id=869113642]
+position = Vector2(143, 60)
+texture = ExtResource("20_81klo")
+
+[node name="Sign" type="Sprite2D" parent="Objects/Stuff" unique_id=92514157]
+position = Vector2(119, -86)
+texture = ExtResource("21_tgy6u")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Objects/Stuff" unique_id=974390253]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Stuff/StaticBody2D" unique_id=1845963101]
+position = Vector2(-82, 57.5)
+shape = SubResource("RectangleShape2D_fkdbe")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Objects/Stuff/StaticBody2D" unique_id=800591381]
+polygon = PackedVector2Array(-151, 27, -141, 27, -141, 36, -134, 37, -134, 47, -149, 47, -162, 46, -162, 36, -152, 36)
+
+[node name="Line" type="Sprite2D" parent="Objects/Stuff" unique_id=794961144]
+position = Vector2(25, 10)
+texture = ExtResource("22_cwurv")
+
+[node name="House3" type="Sprite2D" parent="Objects/Stuff" unique_id=1991756442]
+position = Vector2(161.5, 284.5)
+scale = Vector2(1.1875, 1.015625)
+texture = ExtResource("4_vm72l")
+
+[node name="House1" type="Sprite2D" parent="Objects/Stuff" unique_id=9266556]
+position = Vector2(142, -281)
+texture = ExtResource("23_mucmn")
+
+[node name="CarStartPosition" type="Node2D" parent="." unique_id=578140865]
+metadata/_edit_lock_ = true
+
+[node name="Marker2D" type="Marker2D" parent="CarStartPosition" unique_id=1949013523]
+position = Vector2(-202, 163)
+
+[node name="Marker2D2" type="Marker2D" parent="CarStartPosition" unique_id=831570896]
+position = Vector2(203, 143)
+
+[node name="Marker2D3" type="Marker2D" parent="CarStartPosition" unique_id=2120528420]
+position = Vector2(-204, 115)
+
+[node name="Marker2D4" type="Marker2D" parent="CarStartPosition" unique_id=1337819564]
+position = Vector2(205, 93)
+
+[node name="Marker2D5" type="Marker2D" parent="CarStartPosition" unique_id=277477887]
+position = Vector2(205, -23)
+
+[node name="Marker2D6" type="Marker2D" parent="CarStartPosition" unique_id=1085770192]
+position = Vector2(-203, -47)
+
+[node name="Marker2D7" type="Marker2D" parent="CarStartPosition" unique_id=1333780191]
+position = Vector2(202, -90)
+
+[node name="Marker2D8" type="Marker2D" parent="CarStartPosition" unique_id=1985678826]
+position = Vector2(-203, -113)
+
+[node name="Marker2D9" type="Marker2D" parent="CarStartPosition" unique_id=1551581302]
+position = Vector2(-202, 6)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=725383484]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=812577249]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.5
+offset_top = 20.0
+offset_right = 40.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("24_vm72l")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Borders/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer/CarTimer" to="." method="_on_car_timer_timeout"]
+[connection signal="timeout" from="Timer/ScoreTimer" to="." method="_on_score_timer_timeout"]
